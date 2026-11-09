@@ -26,10 +26,10 @@ img { display: block; max-width: 100%; }
 .header a:hover, .footer a:hover { text-decoration: underline; }
 .brand {
     color: inherit;
-    font-family: "Avenir Next", system-ui, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     font-size: clamp(1.5rem, 2.3vw, 1.8rem);
-    font-weight: 800;
-    letter-spacing: -.045em;
+    font-weight: 600;
+    letter-spacing: .011em;
     gap: .55rem;
 }
 .header-links { gap: .75rem 1.75rem; flex-wrap: wrap; font-size: .94rem; }
