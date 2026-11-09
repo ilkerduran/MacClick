@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MacClick is an open source macOS menu bar app for trackpad gestures, middle clicks, and keyboard shortcuts.">
+    <meta name="theme-color" content="#f8f7fc">
+    <title>MacClick</title>
+    <link rel="icon" href="./images/icon.png" type="image/png">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./translations.js" defer></script>
+    <script src="./site.js" defer></script>
+</head>
+<body>
+    <a class="skip" href="#content" data-text="skip">Skip to content</a>
+    <header class="shell header">
+        <a class="brand" href="#top"><img src="./images/icon.png" width="42" height="42" alt="">MacClick</a>
+        <div class="header-links">
+            <a href="#gestures" data-text="gestures">Gestures</a>
+            <a href="#about" data-text="about">About</a>
+            <label class="language">
+                <span class="visually-hidden" data-text="language">Language</span>
+                <select id="language">
+                    <option value="en" lang="en">English</option>
+                    <option value="tr" lang="tr">Türkçe</option>
+                    <option value="es" lang="es">Español</option>
+                    <option value="pt" lang="pt-PT">Português</option>
+                    <option value="ar" lang="ar" dir="rtl">العربية</option>
+                    <option value="zh" lang="zh-Hans">简体中文</option>
+                    <option value="ru" lang="ru">Русский</option>
+                </select>
+            </label>
+        </div>
+    </header>
+    <main id="content" class="shell">
+        <section class="hero" id="top" aria-labelledby="headline">
+            <div>
+                <p class="eyebrow" data-text="badge">Open source for macOS</p>
+                <h1 id="headline" data-text="headline">Make more of your Mac trackpad.</h1>
+                <p class="lede" data-text="intro">Switch tabs, middle click, and run your own shortcuts with simple trackpad gestures.</p>
+                <div class="actions">
+                    <a class="button primary" href="https://github.com/ilkerduran/MacClick" data-text="github">View on GitHub</a>
+                    <a class="button secondary" href="https://github.com/ilkerduran/MacClick#first-run" data-text="setup">Setup guide</a>
+                </div>
+                <p class="compatibility" data-text="requirements">Apple Silicon MacBook · Built-in trackpad · macOS 27.2 or later</p>
+            </div>
+            <img class="photo hero-photo" src="./images/trackpad-hero.jpg" width="1200" height="800"
+                alt="Illustration of a hand using a MacBook trackpad" data-alt="heroAlt" fetchpriority="high">
+        </section>
+        <section id="gestures" class="section" aria-labelledby="gesture-title">
+            <p class="eyebrow" data-text="defaults">Default mappings</p>
+            <h2 id="gesture-title" data-text="gestureTitle">Four gestures to start.</h2>
+            <p class="section-copy" data-text="gestureIntro">Change any action or turn individual gestures off in MacClick Settings.</p>
+            <dl class="mappings">
+                <div><dt data-text="threeTap">Three-finger tap or click</dt><dd data-text="middleClick">Middle click</dd></div>
+                <div><dt data-text="swipeRight">Three-finger swipe right</dt><dd><kbd dir="ltr">Ctrl + Tab</kbd></dd></div>
+                <div><dt data-text="swipeLeft">Three-finger swipe left</dt><dd><kbd dir="ltr">Ctrl + Shift + Tab</kbd></dd></div>
+                <div><dt data-text="fourTap">Four-finger tap or click</dt><dd><kbd dir="ltr">⌘ + W</kbd></dd></div>
+            </dl>
+        </section>
+        <section id="about" class="section story" aria-labelledby="about-title">
+            <img class="photo story-photo" src="./images/trackpad-detail.jpg" width="1000" height="512"
+                alt="Illustration of fingers resting on a trackpad" data-alt="detailAlt" loading="lazy">
+            <div>
+                <h2 id="about-title" data-text="why">Why I built MacClick</h2>
+                <p data-text="story">I wanted more from the gestures built into macOS, especially when browsing. I kept reaching for ways to switch tabs, open links with a middle click, and close tabs without leaving the trackpad. Paid tools already cover those needs. I wanted to build a small alternative with AI and share it as open source.</p>
+                <p data-text="contribute">Have a gesture you use all the time? Suggest it on GitHub and I can look at adding it. You can also add it yourself and open a pull request.</p>
+                <div class="actions">
+                    <a href="https://github.com/ilkerduran/MacClick/issues" data-text="suggest">Suggest a gesture</a>
+                    <a href="https://github.com/ilkerduran/MacClick/pulls" data-text="pullRequests">Pull requests</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="shell footer">
+        <span>MacClick</span>
+        <div>
+            <a href="https://github.com/ilkerduran/MacClick">GitHub</a>
+            <a href="https://github.com/ilkerduran/MacClick/blob/main/LICENSE" data-text="license">Apache License 2.0</a>
+        </div>
+    </footer>
+</body>
+</html>
