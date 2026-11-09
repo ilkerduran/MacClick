@@ -24,8 +24,15 @@ img { display: block; max-width: 100%; }
 .header { min-height: 80px; border-bottom: 1px solid var(--line); padding-block: .75rem; }
 .header a, .footer a { text-decoration: none; }
 .header a:hover, .footer a:hover { text-decoration: underline; }
-.brand { color: inherit; font-weight: 750; font-size: 1.13rem; gap: .55rem; }
-.header-links { gap: 1.3rem; flex-wrap: wrap; font-size: .94rem; }
+.brand {
+    color: inherit;
+    font-family: "Avenir Next", system-ui, sans-serif;
+    font-size: clamp(1.5rem, 2.3vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: -.045em;
+    gap: .55rem;
+}
+.header-links { gap: .75rem 1.75rem; flex-wrap: wrap; font-size: .94rem; }
 .language select {
     font: inherit;
     color: inherit;
@@ -51,7 +58,7 @@ h2 { font-size: clamp(1.9rem, 3.5vw, 3rem); letter-spacing: -.035em; }
 .secondary { border: 1px solid var(--line); background: #fff; }
 .compatibility { color: var(--muted); font-size: .84rem; line-height: 1.6; margin: 1.15rem 0 0; }
 .photo { width: 100%; height: auto; object-fit: cover; aspect-ratio: 3 / 2; border-radius: 1rem; background: #eee9f5; }
-.hero-photo { box-shadow: 0 1rem 3rem #32234b16; }
+.hero-photo { width: 90%; justify-self: center; box-shadow: 0 1rem 3rem #32234b16; }
 .section { border-top: 1px solid var(--line); padding-block: clamp(2.25rem, 5vw, 4.5rem); }
 .section-copy { margin-block: .75rem 1.35rem; }
 .mappings { margin: 0; border: 1px solid var(--line); border-radius: 1rem; background: #fff; }
@@ -72,7 +79,7 @@ kbd { display: inline-block; padding: .1em .42em; border-radius: .32rem; backgro
 }
 
 @media (max-width: 420px) {
-    .header-links { gap: .7rem; }
+    .header-links { gap: .7rem 1rem; }
     .mappings div { padding: .8rem; }
 }
 
