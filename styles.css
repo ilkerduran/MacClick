@@ -76,12 +76,4 @@ kbd { display: inline-block; padding: .1em .42em; border-radius: .32rem; backgro
     .mappings div { padding: .8rem; }
 }
 
-.setup-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 1rem; background: #fff; }
-.setup-table { width: 100%; border-collapse: collapse; text-align: start; line-height: 1.55; }
-.setup-table th, .setup-table td { padding: 1rem 1.2rem; text-align: start; vertical-align: top; }
-.setup-table thead { background: #f1edf8; }
-.setup-table tbody tr { border-top: 1px solid var(--line); }
-.setup-table tbody th { width: 25%; min-width: 8rem; font-weight: 650; }
-.setup-table td, .setup-links { color: var(--muted); }
 .setup-links { line-height: 1.6; }
-@media (max-width: 420px) { .setup-table th, .setup-table td { padding: .75rem; } }
