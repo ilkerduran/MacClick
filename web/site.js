@@ -2,8 +2,13 @@
     const picker = document.querySelector("#language");
     const textNodes = document.querySelectorAll("[data-text]");
     const images = document.querySelectorAll("[data-alt]");
-    const language = new URLSearchParams(window.location.search).get("lang");
+    const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
     const supported = new Set(Array.from(picker.options, option => option.value));
+
+    function supportedLanguage(tag) {
+        const language = tag?.toLowerCase().split("-")[0];
+        return supported.has(language) ? language : undefined;
+    }
 
     function applyLanguage(locale) {
         const strings = translations[locale] ?? {};
@@ -22,13 +27,14 @@
     const englishText = new Map(Array.from(textNodes, node => [node, node.textContent]));
     const englishAlt = new Map(Array.from(images, image => [image, image.alt]));
 
-    applyLanguage(supported.has(language) ? language : "en");
+    const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language];
+    const browserLanguage = browserLanguages.map(supportedLanguage).find(Boolean);
+    applyLanguage(supportedLanguage(requestedLanguage) ?? browserLanguage ?? "en");
     picker.addEventListener("change", () => {
         applyLanguage(picker.value);
         if (location.protocol === "file:") return;
         const url = new URL(location.href);
-        if (picker.value === "en") url.searchParams.delete("lang");
-        else url.searchParams.set("lang", picker.value);
+        url.searchParams.set("lang", picker.value);
         history.replaceState(null, "", url);
     });
 })();
