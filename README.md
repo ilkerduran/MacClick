@@ -40,6 +40,8 @@ Copy `build/Build/Products/Release/MacClick.app` to Applications and open that c
 2. On the **Settings** page, click **Open Privacy Settings**. In **System Settings → Privacy & Security → Device Control and Data Access**, enable MacClick. If it is missing, use **+** to add the Applications copy.
 3. Return to MacClick, click **Retry**, and close its settings window before trying a gesture.
 
+**Open Privacy Settings** remains available after you grant access.
+
 If an ad hoc update invalidates the existing permission, remove MacClick’s entry and add the new Applications copy. If the permission still appears unavailable, quit and reopen that copy.
 
 MacClick uses the macOS permission to send its configured mouse clicks and shortcuts and to replace matching primary-button clicks. The click monitor covers only primary-button events. Shortcut recording only receives key events delivered to MacClick’s settings window. MacClick does not request Input Monitoring.
@@ -52,7 +54,7 @@ Use a row’s **Enabled** checkbox to disable that gesture or **Disable Gestures
 
 ## Contribute
 
-Use GitHub Issues for bugs and feature requests. For trackpad bugs, include the Mac model, macOS version, MacClick build, gesture, and whether you used a light tap or physical click. Pull requests should include verification steps.
+Use [GitHub Issues](https://github.com/ilkerduran/MacClick/issues) for bugs and feature requests. For trackpad bugs, include the Mac model, macOS version, MacClick build, gesture, and whether you used a light tap or physical click. Pull requests should include verification steps.
 
 Use the other person’s language in direct conversation. Write code, documentation, repository contributions, and commit messages in English. MacClick’s interface is English for now. See the [contributor guide](AGENTS.md) for project conventions and test commands, and the [verification record](docs/Verification.md) for hardware checks and measured performance.
 

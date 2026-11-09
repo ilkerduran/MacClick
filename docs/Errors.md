@@ -61,5 +61,12 @@ Search this log before retrying a failed operation or changing an area with a kn
 
 - **Symptom and impact** — The user reported that Build 2 showed its icon in Finder but had no icon in Device Control and Data Access.
 - **Cause and evidence** — Build 2 shipped only a standalone `.icns` and `CFBundleIconFile`. It did not declare a named app icon. The exact reason the permission pane omitted the old icon is unconfirmed.
-- **Fix and verification** — Build 3 uses an Xcode [app icon set](../MacClick/Resources/Assets.xcassets/MacClick.appiconset). Xcode emitted the named icon, the compiled catalog, and a standalone fallback. AppKit resolved the trackpad glyph for the installed bundle. The permission row requires a visual check after re-authorization.
+- **Fix and verification** — Build 3 added an Xcode [app icon set](../MacClick/Resources/Assets.xcassets/MacClick.appiconset). AppKit resolved the trackpad glyph, but the user reported that the permission row still had no icon. Launch Services later listed two development copies and an old copy in the Trash under the same bundle ID. The duplicate registrations were removed and the generated development bundles were moved aside because Launch Services had registered them again. The user subsequently reported that the updated setup worked. The icon on the permission row was not independently observed.
 - **Prevention** — Verify both icon metadata keys, the named rendition in the compiled catalog, and the permission row after changing bundle artwork.
+
+## ERR-008 · 2026-11-09 · Privacy Settings shortcut hidden after permission grant
+
+- **Symptom and impact** — The Open Privacy Settings button disappeared after MacClick was authorized, so the Settings page could not reopen the macOS permission pane.
+- **Cause and evidence** — The status refresh hid the button when posting was allowed. The button action also opened the pane only if the permission request returned false.
+- **Fix and verification** — Build 4 keeps the button visible and opens the same pane whether or not access is granted. An AppKit smoke check confirmed visibility in both states and verified that clicking with access already granted reaches the privacy URL.
+- **Prevention** — Verify the privacy shortcut before and after granting access.

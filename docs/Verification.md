@@ -20,7 +20,11 @@ The Release build and 25 XCTest cases passed. The build was installed in Applica
 
 ## Build 3 follow-up
 
-The Release build and all 25 XCTest cases passed. The installed bundle passed signature verification and launched in accessory mode. Its metadata names `MacClick` in both `CFBundleIconName` and `CFBundleIconFile`. The compiled asset catalog contains ten icon renditions, and AppKit resolved the trackpad icon from the installed path. The installed bundle occupied 512 KiB on disk on the test Mac. The new build requires a fresh macOS permission grant. The Device Control and Data Access row remains to be checked visually.
+The Release build and all 25 XCTest cases passed. The installed bundle passed signature verification and launched in accessory mode. Its metadata names `MacClick` in both `CFBundleIconName` and `CFBundleIconFile`. The compiled asset catalog contains ten icon renditions, and AppKit resolved the trackpad icon from the installed path. The installed bundle occupied 512 KiB on disk on the test Mac. The user reported that the Device Control and Data Access row still had no icon.
+
+## Build 4 follow-up
+
+The Release build and all 25 XCTest cases passed. An AppKit smoke check verified that **Open Privacy Settings** stays visible before and after granting access, and that it reaches the privacy URL when access is already granted. Launch Services reported only the installed copy after the duplicate registrations and development bundles were removed from its lookup. The user reported that the updated setup worked. The icon on the permission row was not independently observed.
 
 ## Idle measurements
 

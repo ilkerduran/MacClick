@@ -149,7 +149,7 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
         removeLoginButton.target = app
         removeLoginButton.action = #selector(MacClickApp.removePendingLogin)
         permissionButton.target = app
-        permissionButton.action = #selector(MacClickApp.requestPermission)
+        permissionButton.action = #selector(MacClickApp.openPrivacySettings)
         let retry = NSButton(title: "Retry", target: app, action: #selector(MacClickApp.retryInput))
 
         settingsPage.addArrangedSubview(heading("Settings", size: 21))
@@ -172,7 +172,6 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
         trackpadStatus.stringValue = app.hasPostPermission
             ? app.inputMessage
             : "Open the Settings page to grant permission and activate gestures."
-        permissionButton.isHidden = app.hasPostPermission
         masterToggle.state = app.configuration.enabled ? .on : .off
         loginToggle.state = app.loginState
         loginStatus.stringValue = app.loginMessage

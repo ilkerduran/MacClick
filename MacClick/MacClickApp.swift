@@ -152,9 +152,11 @@ final class MacClickApp: NSObject, NSApplicationDelegate {
         updateInput(retry: true)
     }
 
-    @objc func requestPermission() {
-        if !CGRequestPostEventAccess(),
-           let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
+    @objc func openPrivacySettings() {
+        if !hasPostPermission {
+            _ = CGRequestPostEventAccess()
+        }
+        if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
             NSWorkspace.shared.open(url)
         }
         retryInput()
