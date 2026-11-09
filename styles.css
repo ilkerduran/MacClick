@@ -58,7 +58,7 @@ h2 { font-size: clamp(1.9rem, 3.5vw, 3rem); letter-spacing: -.035em; }
 .secondary { border: 1px solid var(--line); background: #fff; }
 .compatibility { color: var(--muted); font-size: .84rem; line-height: 1.6; margin: 1.15rem 0 0; }
 .photo { width: 100%; height: auto; object-fit: cover; aspect-ratio: 3 / 2; border-radius: 1rem; background: #eee9f5; }
-.hero-photo { width: 90%; justify-self: center; box-shadow: 0 1rem 3rem #32234b16; }
+.hero-photo { width: 81%; justify-self: center; box-shadow: 0 1rem 3rem #32234b16; }
 .section { border-top: 1px solid var(--line); padding-block: clamp(2.25rem, 5vw, 4.5rem); }
 .section-copy { margin-block: .75rem 1.35rem; }
 .mappings { margin: 0; border: 1px solid var(--line); border-radius: 1rem; background: #fff; }
