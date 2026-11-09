@@ -1,6 +1,6 @@
 # MacClick website
 
-Open `index.html` locally, or serve this directory with a static HTTP server. The site uses English by default. The language picker also supports Turkish, Spanish, European Portuguese, Arabic, Simplified Chinese, Russian, Japanese, German, French, and Danish. To share a translated page, use a URL such as `?lang=tr`. Arabic uses right-to-left layout.
+Open `index.html` locally, or serve this directory with a static HTTP server. The site uses the first supported language in the browser’s preferences and falls back to English. The language picker also supports Turkish, Spanish, European Portuguese, Arabic, Simplified Chinese, Russian, Japanese, German, French, and Danish. A URL such as `?lang=tr` takes precedence over the browser’s preferences. Arabic uses right-to-left layout.
 
 The site has no build step. Its assets and scripts use relative paths, so the same files work at a GitHub Pages project path or on a custom domain. The photographs in `images/` are generated illustrations. The app icon comes from the MacClick asset catalog.
 
