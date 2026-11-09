@@ -16,6 +16,12 @@ For either tap mapping, touch and lift lightly or place all fingers on the track
 
 For swipes, move all three fingers together and lift them to trigger the action once. A normal middle-button click follows the pointer and the receiving app decides how to handle it. Keyboard events use ordinary session routing, so an OS-reserved shortcut or one intercepted by another utility can take precedence. Temporarily disable overlapping mappings in other gesture utilities when verifying MacClick. [Apple’s Trackpad settings guide](https://support.apple.com/en-gb/guide/mac-help/mchlp1226/mac) and [three-finger drag guide](https://support.apple.com/en-us/102341) describe the controls.
 
+### Browser history changes during a three-finger swipe
+
+MacClick’s default left swipe sends **Control + Shift + Tab**. macOS can separately interpret the same movement as a page swipe if **Swipe between pages** accepts three fingers. This can switch tabs and navigate browser history in a single motion.
+
+Open **System Settings → Trackpad → More Gestures → Swipe between pages**. Choose the two-finger option to keep page swipes, or turn the gesture **Off**. To check the source of the overlap, temporarily disable the MacClick swipe mapping and repeat the gesture. If it still navigates browser history, check the system gesture and any browser or gesture utility settings. [Apple’s Trackpad settings guide](https://support.apple.com/en-gb/guide/mac-help/mchlp1226/mac)
+
 ## Capture and compatibility
 
 AppKit documents raw indirect touches for views that opt in within the key window. A global event monitor observes events already posted to other applications. Those APIs do not provide a documented raw system-wide trackpad stream with the contact transitions this app needs. [Apple’s trackpad event guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/HandlingTouchEvents/HandlingTouchEvents.html) and [global event monitor reference](https://developer.apple.com/documentation/appkit/nsevent/addglobalmonitorforevents(matching:handler:)) describe that delivery model.

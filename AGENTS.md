@@ -8,6 +8,7 @@
 - `MacClick/Resources/Assets.xcassets/` contains the app icon used by Finder and macOS settings. Keep its trackpad glyph consistent with the menu bar template.
 - `MacClickTests/` contains XCTest cases. The test target compiles the same gesture recognizer and configuration source files as the app. Add new test files to the MacClickTests target.
 - `docs/` contains the project wiki and verification records. Keep generated local build output under `build/`.
+- `web/` contains the static landing page, translations, and website images. See [hosting instructions](web/README.md).
 
 ## Build, Test, and Development Commands
 

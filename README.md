@@ -36,15 +36,16 @@ Copy `build/Build/Products/Release/MacClick.app` to Applications and open that c
 
 ## First run
 
-1. Extract the downloaded archive and move `MacClick.app` to **Applications**.
-2. Open MacClick. If macOS says it cannot verify the app, click **Done**, then open **System Settings → Privacy & Security**. Under **Security**, click **Open Anyway** and authenticate if prompted. The button is available for about an hour after the attempt. See [Apple’s instructions](https://support.apple.com/guide/mac-help/mh40617/mac). The release uses an ad hoc signature and has not been notarized by Apple.
-3. Click the MacClick icon in the menu bar and choose **Open Settings**.
-4. On the **Settings** page, click **Open Privacy Settings**. In **System Settings → Privacy & Security → Device Control and Data Access**, enable MacClick. If it is missing, use **+** to add `/Applications/MacClick.app`.
-5. Return to MacClick, click **Retry**, and close its settings window before trying a gesture.
+MacClick needs permission to send clicks and shortcuts. A download may also prompt for approval to open the app because the release uses an ad hoc signature and lacks Apple notarization.
 
-**Open Privacy Settings** remains available after you grant access.
-
-If an ad hoc update invalidates the existing permission, remove MacClick’s entry and add the new Applications copy. If the permission still appears unavailable, quit and reopen that copy.
+| Step | What to do |
+| --- | --- |
+| 1. Install | Extract the [GitHub release archive](https://github.com/ilkerduran/MacClick/releases/latest) and move `MacClick.app` to **Applications**. |
+| 2. Approve the app if prompted | Open MacClick. If macOS says it cannot verify the app, click **Done**. Go to **System Settings → Privacy & Security → Security**, choose **Open Anyway**, then confirm and authenticate if prompted. If the button is missing, try opening MacClick again. [Apple’s instructions](https://support.apple.com/guide/mac-help/mh40617/mac) |
+| 3. Open the permission list | In the MacClick menu bar menu, choose **Open Settings → Settings → Open Privacy Settings**. This opens **System Settings → Privacy & Security → Device Control and Data Access**. |
+| 4. Grant access | If MacClick is missing, click **+**, select `/Applications/MacClick.app`, and click **Open**. Turn on the switch next to MacClick. After replacing an ad hoc build, remove any stale MacClick entry and add the current Applications copy again. |
+| 5. Relaunch MacClick | Choose **Quit MacClick** in the menu bar, then reopen MacClick from **Applications**. Relaunching applies the new grant when **Retry** does not. |
+| 6. Check browser swipes | If a three-finger swipe changes tabs and also navigates browser history, go to **System Settings → Trackpad → More Gestures → Swipe between pages**. Choose the two-finger option or turn it **Off**. [Trackpad troubleshooting](docs/Trackpad.md#browser-history-changes-during-a-three-finger-swipe) |
 
 MacClick uses the macOS permission to send its configured mouse clicks and shortcuts and to replace matching primary-button clicks. The click monitor covers only primary-button events. Shortcut recording only receives key events delivered to MacClick’s settings window. MacClick does not request Input Monitoring.
 
@@ -59,6 +60,10 @@ Use a row’s **Enabled** checkbox to disable that gesture or **Disable Gestures
 Use [GitHub Issues](https://github.com/ilkerduran/MacClick/issues) for bugs and feature requests. For trackpad bugs, include the Mac model, macOS version, MacClick build, gesture, and whether you used a light tap or physical click. Pull requests should include verification steps.
 
 Use the other person’s language in direct conversation. Write code, documentation, repository contributions, and commit messages in English. MacClick’s interface is English for now. See the [contributor guide](AGENTS.md) for project conventions and test commands, and the [verification record](docs/Verification.md) for hardware checks and measured performance.
+
+## Website
+
+The static landing page is in [web/](web/). See the [hosting instructions](web/README.md) for GitHub Pages and custom domains.
 
 ## License
 
