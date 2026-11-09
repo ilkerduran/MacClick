@@ -36,9 +36,11 @@ Copy `build/Build/Products/Release/MacClick.app` to Applications and open that c
 
 ## First run
 
-1. Click the MacClick icon in the menu bar and choose **Open Settings**.
-2. On the **Settings** page, click **Open Privacy Settings**. In **System Settings → Privacy & Security → Device Control and Data Access**, enable MacClick. If it is missing, use **+** to add the Applications copy.
-3. Return to MacClick, click **Retry**, and close its settings window before trying a gesture.
+1. Extract the downloaded archive and move `MacClick.app` to **Applications**.
+2. Open MacClick. If macOS says it cannot verify the app, click **Done**, then open **System Settings → Privacy & Security**. Under **Security**, click **Open Anyway** and authenticate if prompted. The button is available for about an hour after the attempt. See [Apple’s instructions](https://support.apple.com/guide/mac-help/mh40617/mac). The release uses an ad hoc signature and has not been notarized by Apple.
+3. Click the MacClick icon in the menu bar and choose **Open Settings**.
+4. On the **Settings** page, click **Open Privacy Settings**. In **System Settings → Privacy & Security → Device Control and Data Access**, enable MacClick. If it is missing, use **+** to add `/Applications/MacClick.app`.
+5. Return to MacClick, click **Retry**, and close its settings window before trying a gesture.
 
 **Open Privacy Settings** remains available after you grant access.
 

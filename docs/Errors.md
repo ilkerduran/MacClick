@@ -57,6 +57,8 @@ Search this log before retrying a failed operation or changing an area with a kn
 - **Fix and verification** — The new process received a `kTCCServicePostEvent` code-requirement mismatch even though the permission appeared enabled. Scoped `tccutil reset PostEvent com.macclick.app` and `tccutil reset Accessibility com.macclick.app` cleared the entries. The user reported that clicking worked after granting access again. The [setup guide](../README.md#first-run) explains how to authorize the installed copy.
 - **Prevention** — Check Accessibility again after replacing an ad hoc build. Use a consistent development signing identity when available.
 
+  On November 9, 2026, the user downloaded the published v1.0 archive and reported that MacClick did not appear in Device Control and Data Access. The installed process received the same code-requirement mismatch for `kTCCServicePostEvent`. The current release and the earlier local build use ad hoc signatures. Re-authorization of the downloaded copy is pending.
+
 ## ERR-007 · 2026-11-09 · App icon missing from the macOS permission list
 
 - **Symptom and impact** — The user reported that Build 2 showed its icon in Finder but had no icon in Device Control and Data Access.
