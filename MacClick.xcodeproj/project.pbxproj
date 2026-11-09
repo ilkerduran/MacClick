@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		000000000000000000000001 /* MacClickApp.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = MacClickApp.swift;
+			sourceTree = "<group>";
+		};
+		000000000000000000000002 /* GestureConfiguration.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = GestureConfiguration.swift;
+			sourceTree = "<group>";
+		};
+		000000000000000000000003 /* GestureRecognizer.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = GestureRecognizer.swift;
+			sourceTree = "<group>";
+		};
+		000000000000000000000004 /* ActionExecutor.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = ActionExecutor.swift;
+			sourceTree = "<group>";
+		};
+		000000000000000000000005 /* SettingsController.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = SettingsController.swift;
+			sourceTree = "<group>";
+		};
+		000000000000000000000006 /* Trackpad/TrackpadInput.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = TrackpadInput.swift;
+			sourceTree = "<group>";
+		};
+		000000000000000000000007 /* Trackpad/TrackpadBridge.c */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = TrackpadBridge.c;
+			sourceTree = "<group>";
+		};
+		000000000000000000000008 /* GestureRecognizerTests.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = GestureRecognizerTests.swift;
+			sourceTree = "<group>";
+		};
+		000000000000000000000009 /* GestureConfigurationTests.swift */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = GestureConfigurationTests.swift;
+			sourceTree = "<group>";
+		};
+		00000000000000000000000A /* Info.plist */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.xml;
+			path = Info.plist;
+			sourceTree = "<group>";
+		};
+		00000000000000000000000B /* Trackpad/TrackpadBridge.h */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = TrackpadBridge.h;
+			sourceTree = "<group>";
+		};
+		00000000000000000000000C /* MacClick.app */ = {
+			isa = PBXFileReference;
+			explicitFileType = wrapper.application;
+			path = MacClick.app;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00000000000000000000000D /* MacClickTests.xctest */ = {
+			isa = PBXFileReference;
+			explicitFileType = wrapper.cfbundle;
+			path = MacClickTests.xctest;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		000000000000000000000011 /* Main Group */ = {
+			isa = PBXGroup;
+			children = (00000000000000000000000E /* MacClick Sources */, 00000000000000000000000F /* MacClick Tests */, 000000000000000000000010 /* Products */);
+			sourceTree = "<group>";
+		};
+		00000000000000000000000E /* MacClick Sources */ = {
+			isa = PBXGroup;
+			children = (000000000000000000000001 /* MacClickApp.swift */, 000000000000000000000002 /* GestureConfiguration.swift */, 000000000000000000000003 /* GestureRecognizer.swift */, 000000000000000000000004 /* ActionExecutor.swift */, 000000000000000000000005 /* SettingsController.swift */, 000000000000000000000012 /* Trackpad */, 00000000000000000000000A /* Info.plist */, 000000000000000000000031 /* Assets.xcassets */);
+			sourceTree = "<group>";
+			path = MacClick;
+		};
+		000000000000000000000012 /* Trackpad */ = {
+			isa = PBXGroup;
+			children = (000000000000000000000006 /* Trackpad/TrackpadInput.swift */, 000000000000000000000007 /* Trackpad/TrackpadBridge.c */, 00000000000000000000000B /* Trackpad/TrackpadBridge.h */);
+			sourceTree = "<group>";
+			path = Trackpad;
+		};
+		00000000000000000000000F /* MacClick Tests */ = {
+			isa = PBXGroup;
+			children = (000000000000000000000008 /* GestureRecognizerTests.swift */, 000000000000000000000009 /* GestureConfigurationTests.swift */);
+			sourceTree = "<group>";
+			path = MacClickTests;
+		};
+		000000000000000000000010 /* Products */ = {
+			isa = PBXGroup;
+			children = (00000000000000000000000C /* MacClick.app */, 00000000000000000000000D /* MacClickTests.xctest */);
+			sourceTree = "<group>";
+			name = Products;
+		};
+		000000000000000000000013 /* MacClickApp.swift in MacClick */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000001;
+		};
+		000000000000000000000014 /* GestureConfiguration.swift in MacClick */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000002;
+		};
+		000000000000000000000015 /* GestureRecognizer.swift in MacClick */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000003;
+		};
+		000000000000000000000016 /* ActionExecutor.swift in MacClick */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000004;
+		};
+		000000000000000000000017 /* SettingsController.swift in MacClick */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000005;
+		};
+		000000000000000000000018 /* Trackpad/TrackpadInput.swift in MacClick */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000006;
+		};
+		000000000000000000000019 /* Trackpad/TrackpadBridge.c in MacClick */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000007;
+		};
+		00000000000000000000001A /* MacClick Sources Phase */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (000000000000000000000013 /* MacClickApp.swift in MacClick */, 000000000000000000000014 /* GestureConfiguration.swift in MacClick */, 000000000000000000000015 /* GestureRecognizer.swift in MacClick */, 000000000000000000000016 /* ActionExecutor.swift in MacClick */, 000000000000000000000017 /* SettingsController.swift in MacClick */, 000000000000000000000018 /* Trackpad/TrackpadInput.swift in MacClick */, 000000000000000000000019 /* Trackpad/TrackpadBridge.c in MacClick */);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000031 /* Assets.xcassets */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder.assetcatalog;
+			path = Resources/Assets.xcassets;
+			sourceTree = "<group>";
+		};
+		000000000000000000000032 /* Assets.xcassets in Resources */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000031;
+		};
+		000000000000000000000033 /* MacClick Resources Phase */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (000000000000000000000032 /* Assets.xcassets in Resources */);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00000000000000000000001C /* MacClick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00000000000000000000001B;
+			buildPhases = (00000000000000000000001A /* MacClick Sources Phase */, 000000000000000000000033 /* MacClick Resources Phase */);
+			buildRules = ();
+			dependencies = ();
+			name = MacClick;
+			productName = MacClick;
+			productReference = 00000000000000000000000C;
+			productType = "com.apple.product-type.application";
+		};
+		00000000000000000000001D /* GestureRecognizerTests.swift in MacClickTests */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000008;
+		};
+		00000000000000000000001E /* GestureConfigurationTests.swift in MacClickTests */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000009;
+		};
+		00000000000000000000001F /* GestureConfiguration.swift in MacClickTests */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000002;
+		};
+		000000000000000000000020 /* GestureRecognizer.swift in MacClickTests */ = {
+			isa = PBXBuildFile;
+			fileRef = 000000000000000000000003;
+		};
+		000000000000000000000021 /* MacClickTests Sources Phase */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (00000000000000000000001D /* GestureRecognizerTests.swift in MacClickTests */, 00000000000000000000001E /* GestureConfigurationTests.swift in MacClickTests */, 00000000000000000000001F /* GestureConfiguration.swift in MacClickTests */, 000000000000000000000020 /* GestureRecognizer.swift in MacClickTests */);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000023 /* MacClickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000000000000000000022;
+			buildPhases = (000000000000000000000021 /* MacClickTests Sources Phase */);
+			buildRules = ();
+			dependencies = ();
+			name = MacClickTests;
+			productName = MacClickTests;
+			productReference = 00000000000000000000000D;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		000000000000000000000024 /* Project Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				MACOSX_DEPLOYMENT_TARGET = 27.2;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+			};
+			name = Debug;
+		};
+		000000000000000000000025 /* Project Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				MACOSX_DEPLOYMENT_TARGET = 27.2;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+			};
+			name = Release;
+		};
+		000000000000000000000026 /* Project Configurations */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (000000000000000000000024 /* Project Debug */, 000000000000000000000025 /* Project Release */);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000000000000000000000027 /* MacClick Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MacClick/Trackpad/TrackpadBridge.h;
+				INFOPLIST_FILE = MacClick/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.macclick.app;
+				MARKETING_VERSION = 1.0;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MacClick;
+				CURRENT_PROJECT_VERSION = 3;
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+			};
+			name = Debug;
+		};
+		000000000000000000000028 /* MacClick Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MacClick/Trackpad/TrackpadBridge.h;
+				INFOPLIST_FILE = MacClick/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.macclick.app;
+				MARKETING_VERSION = 1.0;
+				ASSETCATALOG_COMPILER_APPICON_NAME = MacClick;
+				CURRENT_PROJECT_VERSION = 3;
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+			};
+			name = Release;
+		};
+		00000000000000000000001B /* MacClick Configurations */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (000000000000000000000027 /* MacClick Debug */, 000000000000000000000028 /* MacClick Release */);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000000000000000000000029 /* MacClickTests Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MacClick/Trackpad/TrackpadBridge.h;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.macclick.app.tests;
+				CODE_SIGN_IDENTITY = "-";
+			};
+			name = Debug;
+		};
+		00000000000000000000002A /* MacClickTests Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MacClick/Trackpad/TrackpadBridge.h;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.macclick.app.tests;
+				CODE_SIGN_IDENTITY = "-";
+			};
+			name = Release;
+		};
+		000000000000000000000022 /* MacClickTests Configurations */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (000000000000000000000029 /* MacClickTests Debug */, 00000000000000000000002A /* MacClickTests Release */);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00000000000000000000002B /* Project */ = {
+			isa = PBXProject;
+			attributes = { LastUpgradeCheck = 2720; };
+			buildConfigurationList = 000000000000000000000026;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, Base);
+			mainGroup = 000000000000000000000011;
+			productRefGroup = 000000000000000000000010;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (00000000000000000000001C /* MacClick */, 000000000000000000000023 /* MacClickTests */);
+		};
+	};
+	rootObject = 00000000000000000000002B /* Project */;
+}
