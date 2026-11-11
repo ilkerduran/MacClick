@@ -55,6 +55,8 @@ On the **Trackpad** page, select a gesture and choose **Middle Mouse Click** or 
 
 Use a row’s **Enabled** checkbox to disable that gesture or **Disable Gestures** in the menu to pause all gestures. Gestures pause while the settings window has keyboard focus. **Launch at Login** uses macOS login items and may require approval in **System Settings → General → Login Items & Extensions**.
 
+If gestures stop responding, choose **Reload Gestures** in the menu bar to reconnect trackpad input. **Retry** in Settings does the same.
+
 ## Contribute
 
 Use [GitHub Issues](https://github.com/ilkerduran/MacClick/issues) for bugs and feature requests. For trackpad bugs, include the Mac model, macOS version, MacClick build, gesture, and whether you used a light tap or physical click. Pull requests should include verification steps.

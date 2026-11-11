@@ -148,8 +148,13 @@ final class MacClickApp: NSObject, NSApplicationDelegate {
         }
     }
 
-    @objc func retryInput() {
+    private func retryInput() {
         updateInput(retry: true)
+    }
+
+    @objc func reloadGestures() {
+        input.stop()
+        retryInput()
     }
 
     @objc func openPrivacySettings() {
@@ -262,6 +267,7 @@ extension MacClickApp: NSMenuDelegate {
         }
         _ = add("Open Settings", #selector(openSettings), key: ",")
         _ = add(configuration.enabled ? "Disable Gestures" : "Enable Gestures", #selector(toggleGestures))
+        _ = add("Reload Gestures", #selector(reloadGestures))
         let item = add("Launch at Login", #selector(toggleLogin))
         item.state = loginState
         menu.addItem(.separator())

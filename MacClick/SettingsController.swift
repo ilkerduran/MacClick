@@ -150,7 +150,7 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
         removeLoginButton.action = #selector(MacClickApp.removePendingLogin)
         permissionButton.target = app
         permissionButton.action = #selector(MacClickApp.openPrivacySettings)
-        let retry = NSButton(title: "Retry", target: app, action: #selector(MacClickApp.retryInput))
+        let retry = NSButton(title: "Retry", target: app, action: #selector(MacClickApp.reloadGestures))
 
         settingsPage.addArrangedSubview(heading("Settings", size: 21))
         settingsPage.addArrangedSubview(masterToggle)

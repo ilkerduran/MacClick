@@ -41,7 +41,7 @@ The second run started the same capture path with a no-op output callback. It ha
 
 Run on an Apple Silicon MacBook with the same macOS version as the build. Use disposable browser tabs. Record the Mac model, macOS version, receiving app and version, and any overlapping macOS or third-party gestures.
 
-- [ ] Launch the copy in Applications. Confirm Finder shows the trackpad app icon, the menu bar icon appears in light and dark mode, the Dock has no MacClick icon, and all four menu commands are available. Open and close Settings several times.
+- [ ] Launch the copy in Applications. Confirm Finder shows the trackpad app icon, the menu bar icon appears in light and dark mode, the Dock has no MacClick icon, and all menu commands are available. Open and close Settings several times.
 - [ ] In **System Settings → Privacy & Security → Device Control and Data Access**, confirm MacClick shows its app icon. With permission off, confirm MacClick explains the requirement and gestures have no effect. Grant access, click **Retry**, and confirm the built-in trackpad is connected. Revoke it and confirm posting stops.
 - [ ] Close Settings. In a browser, place the pointer over a link and tap the trackpad lightly with three fingers. Confirm the browser handles it as a real middle-button click, normally by opening a background tab.
 - [ ] Tap with four fingers. Confirm one foreground tab closes and no middle click is generated.
@@ -52,6 +52,7 @@ Run on an Apple Silicon MacBook with the same macOS version as the build. Use di
 - [ ] Verify ordinary pointing, clicking, two-finger scrolling, pinching, and your remaining macOS gestures. If an external trackpad is available, confirm MacClick acts only on the built-in one.
 - [ ] Record a custom shortcut and map another gesture to **Middle Mouse Click**. Test the assigned actions, per-gesture and master switches, and **Restore Default**. Quit and relaunch to check persistence. Verify recognition works with Settings closed and while a different app is active.
 - [ ] Sleep and wake the Mac, then repeat a gesture. If available, switch away from the login session and back and repeat.
+- [ ] Choose **Reload Gestures** in the menu bar after waking and repeat a tap, a physical click, and a swipe. Disable gestures, choose **Reload Gestures** again, and confirm gestures stay disabled.
 - [ ] Enable **Launch at Login**, approve the login item if required, then log out and back in. Confirm that MacClick starts in the menu bar. Disable the setting and repeat the login check.
 - [ ] With capture enabled, Settings closed, and the trackpad untouched, measure idle memory and CPU. Repeat after a sustained burst of normal trackpad use.
 
