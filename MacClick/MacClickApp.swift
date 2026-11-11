@@ -168,8 +168,19 @@ final class MacClickApp: NSObject, NSApplicationDelegate {
     }
 
     @objc private func openSettings() {
+        showSettings()
+    }
+
+    @objc private func openAbout() {
+        showSettings(showAbout: true)
+    }
+
+    private func showSettings(showAbout: Bool = false) {
         if settings == nil {
             settings = SettingsController(app: self)
+        }
+        if showAbout {
+            settings?.showAbout()
         }
         retryInput()
         NSApp.activate()
@@ -271,6 +282,7 @@ extension MacClickApp: NSMenuDelegate {
         let item = add("Launch at Login", #selector(toggleLogin))
         item.state = loginState
         menu.addItem(.separator())
+        _ = add("About", #selector(openAbout))
         _ = add("Quit MacClick", #selector(quit), key: "q")
     }
 }

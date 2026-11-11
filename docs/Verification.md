@@ -42,6 +42,7 @@ The second run started the same capture path with a no-op output callback. It ha
 Run on an Apple Silicon MacBook with the same macOS version as the build. Use disposable browser tabs. Record the Mac model, macOS version, receiving app and version, and any overlapping macOS or third-party gestures.
 
 - [ ] Launch the copy in Applications. Confirm Finder shows the trackpad app icon, the menu bar icon appears in light and dark mode, the Dock has no MacClick icon, and all menu commands are available. Open and close Settings several times.
+- [ ] Open **About** from the menu bar with the settings window closed, then repeat with the **Trackpad** page open. Confirm the same window shows the MacClick icon, the installed version and build number, and both full URLs. Verify that each URL and its **Open** button go to the same destination.
 - [ ] In **System Settings → Privacy & Security → Device Control and Data Access**, confirm MacClick shows its app icon. With permission off, confirm MacClick explains the requirement and gestures have no effect. Grant access, click **Retry**, and confirm the built-in trackpad is connected. Revoke it and confirm posting stops.
 - [ ] Close Settings. In a browser, place the pointer over a link and tap the trackpad lightly with three fingers. Confirm the browser handles it as a real middle-button click, normally by opening a background tab.
 - [ ] Tap with four fingers. Confirm one foreground tab closes and no middle click is generated.

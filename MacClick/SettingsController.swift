@@ -2,6 +2,9 @@ import AppKit
 
 @MainActor
 final class SettingsController: NSWindowController, NSWindowDelegate {
+    private static let websiteAddress = "https://ilkerduran.github.io/MacClick/"
+    private static let githubAddress = "https://github.com/ilkerduran/MacClick"
+
     private unowned let app: MacClickApp
     private var selectedGesture = Gesture.threeFingerTap
     private var shortcutMonitor: Any?
@@ -9,8 +12,13 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
 
     private let trackpadButton = NSButton(title: "Trackpad", target: nil, action: nil)
     private let settingsButton = NSButton(title: "Settings", target: nil, action: nil)
+    private let aboutButton = NSButton(title: "About", target: nil, action: nil)
     private let trackpadPage = NSStackView()
     private let settingsPage = NSStackView()
+    private let aboutPage = NSStackView()
+    private var pages: [(button: NSButton, view: NSStackView)] {
+        [(trackpadButton, trackpadPage), (settingsButton, settingsPage), (aboutButton, aboutPage)]
+    }
     private var rows: [(gesture: NSButton, action: NSButton, toggle: NSButton)] = []
     private let editorTitle = NSTextField(labelWithString: "")
     private let editorToggle = NSButton(checkboxWithTitle: "Enabled", target: nil, action: nil)
@@ -48,15 +56,15 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
         let content = NSView()
         window.contentView = content
 
-        for button in [trackpadButton, settingsButton] {
+        for (button, view) in pages {
             button.target = self
             button.action = #selector(selectPage(_:))
             button.setButtonType(.pushOnPushOff)
             button.widthAnchor.constraint(equalToConstant: 112).isActive = true
+            button.state = button == trackpadButton ? .on : .off
+            view.isHidden = button != trackpadButton
         }
-        trackpadButton.state = .on
-        settingsPage.isHidden = true
-        let sidebar = stack([trackpadButton, settingsButton], vertical: true, spacing: 8)
+        let sidebar = stack(pages.map(\.button), vertical: true, spacing: 8)
         let divider = separator(vertical: true)
         let page = NSView()
         for view in [sidebar, divider, page] {
@@ -76,7 +84,7 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
             page.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -16)
         ])
 
-        for view in [trackpadPage, settingsPage] {
+        for (_, view) in pages {
             view.orientation = .vertical
             view.alignment = .leading
             view.spacing = 10
@@ -91,6 +99,7 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
         }
         buildTrackpadPage()
         buildSettingsPage()
+        buildAboutPage()
     }
 
     private func buildTrackpadPage() {
@@ -167,6 +176,72 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
         settingsPage.addArrangedSubview(stack([loginItemsButton, removeLoginButton], spacing: 8))
     }
 
+    private func buildAboutPage() {
+        let title = heading("About", size: 21)
+        aboutPage.addArrangedSubview(title)
+        aboutPage.setCustomSpacing(20, after: title)
+
+        let icon = NSImageView(image: NSApp.applicationIconImage)
+        icon.imageScaling = .scaleProportionallyUpOrDown
+        icon.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        icon.heightAnchor.constraint(equalTo: icon.widthAnchor).isActive = true
+        let identity = stack([icon, heading("MacClick", size: 23)], spacing: 14)
+        aboutPage.addArrangedSubview(identity)
+        aboutPage.setCustomSpacing(18, after: identity)
+
+        let divider = separator()
+        aboutPage.addArrangedSubview(divider)
+        divider.widthAnchor.constraint(equalTo: aboutPage.widthAnchor).isActive = true
+        aboutPage.setCustomSpacing(18, after: divider)
+
+        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown"
+        let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String
+        let versionLabel = NSTextField(labelWithString: build.map { "\(version) (build \($0))" } ?? version)
+        versionLabel.textColor = .secondaryLabelColor
+        let details = NSGridView(views: [
+            [heading("Version"), versionLabel, NSGridCell.emptyContentView],
+            aboutLinkRow("Website", symbol: "globe", address: Self.websiteAddress, action: #selector(openWebsite)),
+            aboutLinkRow("GitHub", symbol: "chevron.left.forwardslash.chevron.right", address: Self.githubAddress, action: #selector(openGitHub))
+        ])
+        details.xPlacement = .leading
+        details.yPlacement = .center
+        details.rowAlignment = .none
+        details.columnSpacing = 16
+        details.rowSpacing = 12
+        aboutPage.addArrangedSubview(details)
+    }
+
+    private func aboutLinkRow(_ title: String, symbol: String, address: String, action: Selector) -> [NSView] {
+        let icon = NSImageView()
+        icon.image = NSImage(systemSymbolName: symbol, accessibilityDescription: nil)
+        icon.contentTintColor = .secondaryLabelColor
+        icon.widthAnchor.constraint(equalToConstant: 18).isActive = true
+        let label = stack([icon, heading(title)], spacing: 6)
+
+        let link = NSButton(title: address, target: self, action: action)
+        link.isBordered = false
+        link.attributedTitle = NSAttributedString(string: address, attributes: [
+            .font: NSFont.systemFont(ofSize: NSFont.systemFontSize),
+            .foregroundColor: NSColor.linkColor,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ])
+        let open = NSButton(title: "Open", target: self, action: action)
+        open.setAccessibilityLabel("Open \(title)")
+        return [label, link, open]
+    }
+
+    @objc private func openWebsite() {
+        if let url = URL(string: Self.websiteAddress) {
+            NSWorkspace.shared.open(url)
+        }
+    }
+
+    @objc private func openGitHub() {
+        if let url = URL(string: Self.githubAddress) {
+            NSWorkspace.shared.open(url)
+        }
+    }
+
     func refreshStatus() {
         inputStatus.stringValue = app.inputMessage
         trackpadStatus.stringValue = app.hasPostPermission
@@ -200,13 +275,17 @@ final class SettingsController: NSWindowController, NSWindowDelegate {
         }
     }
 
+    func showAbout() {
+        selectPage(aboutButton)
+    }
+
     @objc private func selectPage(_ button: NSButton) {
         stopCapture()
-        let showTrackpad = button == trackpadButton
-        trackpadButton.state = showTrackpad ? .on : .off
-        settingsButton.state = showTrackpad ? .off : .on
-        trackpadPage.isHidden = !showTrackpad
-        settingsPage.isHidden = showTrackpad
+        for (pageButton, view) in pages {
+            let isSelected = pageButton == button
+            pageButton.state = isSelected ? .on : .off
+            view.isHidden = !isSelected
+        }
     }
 
     @objc private func selectGesture(_ button: NSButton) {
