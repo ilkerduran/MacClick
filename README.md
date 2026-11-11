@@ -1,6 +1,14 @@
 # MacClick
 
-<img src="MacClick/Resources/Assets.xcassets/MacClick.appiconset/MacClick-128@2x.png" alt="MacClick trackpad icon" width="88">
+<table>
+  <tr>
+    <td><img src="MacClick/Resources/Assets.xcassets/MacClick.appiconset/MacClick-128@2x.png" alt="MacClick trackpad icon" width="88"></td>
+    <td>
+      <strong>Website</strong><br>
+      <a href="https://ilkerduran.github.io/MacClick/">https://ilkerduran.github.io/MacClick/</a>
+    </td>
+  </tr>
+</table>
 
 MacClick is an open-source macOS menu bar app that turns built-in trackpad gestures into mouse clicks and keyboard shortcuts. It uses Swift and AppKit and runs locally without third-party dependencies.
 
